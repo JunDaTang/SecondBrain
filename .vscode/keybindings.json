@@ -1,0 +1,86 @@
+// 将键绑定放在此文件中以覆盖默认值
+[
+    // ===== 代码运行相关 =====
+    {
+        "key": "ctrl+enter",
+        "command": "code-runner.run"
+    },
+    {
+        "key": "ctrl+alt+n",
+        "command": "-code-runner.run"
+    },
+    {
+        "key": "ctrl+enter",
+        "command": "python.execSelectionInTerminal",
+        "when": "editorTextFocus && editorLangId == 'python'"
+    },
+    
+    // ===== Python 执行相关 =====
+    {
+        "key": "shift+enter",
+        "command": "-python.execSelectionInTerminal",
+        "when": "editorTextFocus && !findInputFocussed && !jupyter.ownsSelection && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python'"
+    },
+    {
+        "key": "shift+enter",
+        "command": "-python.execInREPL",
+        "when": "config.python.REPL.sendToNativeREPL && editorTextFocus && !accessibilityModeEnabled && !jupyter.ownsSelection && !notebookEditorFocused && editorLangId == 'python' && activeEditor != 'workbench.editor.interactive'"
+    },
+    {
+        "key": "shift+enter",
+        "command": "-python.execSelectionInTerminal",
+        "when": "editorTextFocus && !findInputFocussed && !jupyter.ownsSelection && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python' && activeEditor != 'workbench.editor.interactive'"
+    },
+    
+    // ===== 编辑器功能 =====
+    {
+        "key": "ctrl+y",
+        "command": "-editor.action.deleteLines",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+i",
+        "command": "composerMode.agent"
+    },
+    
+    // ===== 第二大脑 - Foam 相关 =====
+    {
+        "key": "ctrl+shift+alt+d",
+        "command": "foam.openDailyNote",
+        "when": "editorLangId == 'markdown'"
+    },
+    {
+        "key": "ctrl+shift+alt+g",
+        "command": "foam.showGraph"
+    },
+    {
+        "key": "ctrl+shift+alt+r",
+        "command": "foam.openRandomNote"
+    },
+    {
+        "key": "ctrl+shift+alt+b",
+        "command": "foam.showBacklinks",
+        "when": "editorLangId == 'markdown'"
+    },
+    
+    // ===== 第二大脑 - 文件操作 =====
+    {
+        "key": "ctrl+shift+alt+n",
+        "command": "workbench.action.files.newUntitledFile"
+    },
+    {
+        "key": "ctrl+shift+alt+p",
+        "command": "workbench.action.quickOpen"
+    },
+    {
+        "key": "ctrl+shift+alt+s",
+        "command": "workbench.action.gotoSymbol"
+    },
+    
+    // ===== 第二大脑 - 图片粘贴 =====
+    {
+        "key": "ctrl+shift+alt+v",
+        "command": "pasteImage.paste",
+        "when": "editorLangId == 'markdown'"
+    }
+]

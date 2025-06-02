@@ -1,0 +1,19 @@
+{
+  "foam.openDailyNote.directory": "ZK/00-Inbox",
+  "foam.openDailyNote.filenameFormat": "yyyy-mm-dd",
+  "foam.openDailyNote.titleFormat": "yyyy-mm-dd",
+  "foam.dateFormat": "yyyy-mm-dd",
+  "foam.fileNameTemplate": "${FOAM_DATE_YYYY_MM_DD}-${FOAM_TITLE}",
+  "markdown.suggest.paths.includeWorkspaceHeaderCompletions": "never",
+  "markdown.suggest.paths.enabled": true,
+  "markdown.updateLinksOnFileMove.enabled": "prompt",
+  "files.associations": {
+    "*.md": "markdown"
+  },
+  "editor.wordWrap": "on",
+  "editor.lineNumbers": "on",
+  "explorer.confirmDelete": false,
+  "workbench.tree.indent": 16,
+  "markdown.preview.breaks": true,
+  "markdown.preview.linkify": true
+} 
