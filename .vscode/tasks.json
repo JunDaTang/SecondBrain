@@ -2,10 +2,14 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "📝 创建今日笔记",
+      "label": "🔍 创建日记",
       "type": "shell",
-      "command": "python",
-      "args": [".vscode/scripts/create_daily_note.py"],
+      "command": "uv",
+      "args": [
+        "run",
+        "python",
+        ".vscode/scripts/create_daily_note.py"
+      ],
       "group": "build",
       "presentation": {
         "echo": true,
@@ -15,100 +19,40 @@
       },
       "problemMatcher": []
     },
-    {
-      "label": "📦 整理收集箱",
-      "type": "shell",
-      "command": "python",
-      "args": [".vscode/scripts/organize_inbox.py"],
-      "group": "build",
-      "presentation": {
-        "echo": false,
-        "reveal": "always",
-        "focus": true,
-        "panel": "shared"
+    
+  
+          {
+        "label": "🚀 快速创建PARA项目",
+        "type": "shell",
+        "command": "uv",
+        "args": [
+          "run",
+          "python",
+          ".vscode/scripts/create_project.py"
+        ],
+        "group": "build",
+        "presentation": {
+          "echo": true,
+          "reveal": "silent",
+          "focus": false,
+          "panel": "shared"
+        },
+        "problemMatcher": []
       },
-      "problemMatcher": []
-    },
-    {
-      "label": "🔍 查找孤立笔记",
-      "type": "shell",
-      "command": "python",
-      "args": [".vscode/scripts/find_orphaned_notes.py"],
-      "group": "test",
-      "presentation": {
-        "echo": false,
-        "reveal": "always",
-        "focus": true,
-        "panel": "shared"
-      },
-      "problemMatcher": []
-    },
-    {
-      "label": "📊 标签统计",
-      "type": "shell",
-      "command": "python",
-      "args": [".vscode/scripts/tag_statistics.py"],
-      "group": "test",
-      "presentation": {
-        "echo": false,
-        "reveal": "always",
-        "focus": true,
-        "panel": "shared"
-      },
-      "problemMatcher": []
-    },
-    {
-      "label": "🚀 快速创建项目",
-      "type": "shell",
-      "command": "python",
-      "args": [".vscode/scripts/create_project.py"],
-      "group": "build",
-      "presentation": {
-        "echo": true,
-        "reveal": "silent",
-        "focus": false,
-        "panel": "shared"
-      },
-      "problemMatcher": []
-    },
     {
       "label": "💾 备份到Git",
       "type": "shell",
-      "command": "python",
-      "args": [".vscode/scripts/backup_to_git.py"],
+      "command": "uv",
+      "args": [
+        "run",
+        "python",
+        ".vscode/scripts/backup_to_git.py"
+      ],
       "group": "build",
       "presentation": {
         "echo": true,
         "reveal": "always",
         "focus": false,
-        "panel": "shared"
-      },
-      "problemMatcher": []
-    },
-    {
-      "label": "🧹 清理临时文件",
-      "type": "shell",
-      "command": "python",
-      "args": [".vscode/scripts/cleanup_temp_files.py"],
-      "group": "build",
-      "presentation": {
-        "echo": false,
-        "reveal": "always",
-        "focus": false,
-        "panel": "shared"
-      },
-      "problemMatcher": []
-    },
-    {
-      "label": "📈 知识网络报告",
-      "type": "shell",
-      "command": "python",
-      "args": [".vscode/scripts/knowledge_network_report.py"],
-      "group": "test",
-      "presentation": {
-        "echo": false,
-        "reveal": "always",
-        "focus": true,
         "panel": "shared"
       },
       "problemMatcher": []

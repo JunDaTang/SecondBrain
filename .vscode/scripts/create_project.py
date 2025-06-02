@@ -18,6 +18,7 @@ from utils import (
     create_file_with_content, 
     open_file_in_vscode
 )
+from template_parser import generate_content_from_template
 
 def create_project():
     """创建新项目"""
@@ -34,35 +35,16 @@ def create_project():
         return
     
     # 创建项目目录
-    project_dir = root / 'Projects' / project_name
+    project_dir = root / 'PARA' / '01_Projects' / project_name
     project_dir.mkdir(parents=True, exist_ok=True)
     
-    # 生成项目模板内容
-    today = datetime.now().strftime('%Y-%m-%d')
-    content = [
-        f"# {project_name}",
-        "",
-        "**状态**: 进行中",
-        f"**开始日期**: {today}",
-        "**预期完成**: ",
-        "**优先级**: 中",
-        "",
-        "## 项目概述",
-        "",
-        "",
-        "",
-        "## 任务清单",
-        "",
-        "- [ ] ",
-        "",
-        "## 相关资源",
-        "",
-        "",
-        "",
-        "## 笔记",
-        "",
-        ""
-    ]
+    # 使用项目模板生成内容
+    try:
+        user_inputs = {"项目名称": project_name}
+        content = generate_content_from_template('/para-project', user_inputs, interactive=False)
+    except Exception as e:
+        print_colored(f"生成模板失败: {e}", Colors.RED, "❌")
+        return
     
     # 创建index.md文件
     index_file = project_dir / 'index.md'
