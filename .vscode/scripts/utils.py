@@ -122,10 +122,19 @@ def run_git_command(command: List[str]) -> tuple[bool, str]:
             cwd=get_project_root(),
             capture_output=True,
             text=True,
+            encoding='utf-8',
+            errors='ignore',
             check=True
         )
         return True, result.stdout.strip()
     except subprocess.CalledProcessError as e:
-        return False, e.stderr.strip()
+        error_output = e.stderr
+        if hasattr(e, 'stderr') and e.stderr:
+            # 确保错误输出也使用正确的编码
+            if isinstance(e.stderr, bytes):
+                error_output = e.stderr.decode('utf-8', errors='ignore')
+            else:
+                error_output = e.stderr
+        return False, error_output.strip()
     except FileNotFoundError:
         return False, "Git未安装或不在PATH中" 
